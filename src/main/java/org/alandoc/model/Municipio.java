@@ -1,18 +1,19 @@
-package org.gerdoc.model;
+package org.alandoc.model;
 
-public class Municipio {
+public class Municipio extends Localidad{
 
-    private Integer id;
-    private String nombre;
     private Estado estado;
+
     public Municipio() {
     }
+
 
     public Municipio(Integer id, String nombre, Estado estado) {
         this.id = id;
         this.nombre = nombre;
         this.estado = estado;
     }
+
 
     public Integer getId() {
         return id;
@@ -36,5 +37,16 @@ public class Municipio {
 
     public void setEstado(Estado estado) {
         this.estado = estado;
+    }
+
+
+    @Override
+    public Integer id() {
+        return this.id;
+    }
+
+    @Override
+    public String nombre() {
+        return this.nombre;
     }
 }

@@ -1,8 +1,8 @@
-package org.gerdoc.model;
+package org.alandoc.model;
 
-public class Colonia {
-    private Integer id;
-    private String nombre;
+public class Colonia extends Localidad{
+
+
     private String cp;
     private Municipio municipio;
 
@@ -47,4 +47,15 @@ public class Colonia {
     public void setMunicipio(Municipio municipio) {
         this.municipio = municipio;
     }
+
+    @Override
+    public Integer id() {
+        return this.id;
+    }
+
+    @Override
+    public String nombre() {
+        return this.nombre;
+    }
+
 }
