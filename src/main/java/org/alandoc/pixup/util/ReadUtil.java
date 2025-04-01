@@ -1,4 +1,4 @@
-package org.gerdoc.pixup.util;
+package org.alandoc.pixup.util;
 
 import java.util.Scanner;
 

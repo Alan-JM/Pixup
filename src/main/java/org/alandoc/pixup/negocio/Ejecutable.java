@@ -1,4 +1,4 @@
-package org.gerdoc.pixup.negocio;
+package org.alandoc.pixup.negocio;
 
 public interface Ejecutable
 {

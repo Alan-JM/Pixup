@@ -1,4 +1,4 @@
-package org.gerdoc.pixup.model;
+package org.alandoc.pixup.model;
 
 public abstract class Catalogo
 {

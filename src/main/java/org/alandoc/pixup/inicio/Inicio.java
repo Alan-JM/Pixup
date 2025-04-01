@@ -1,6 +1,6 @@
-package org.gerdoc.pixup.inicio;
+package org.alandoc.pixup.inicio;
 
-import org.gerdoc.pixup.gui.ConsolaVentana;
+import org.alandoc.pixup.gui.ConsolaVentana;
 
 public class Inicio
 {

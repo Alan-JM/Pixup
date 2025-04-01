@@ -1,7 +1,7 @@
-package org.gerdoc.pixup.gui.consola;
+package org.alandoc.pixup.gui.consola;
 
-import org.gerdoc.pixup.gui.LecturaAccion;
-import org.gerdoc.pixup.negocio.Ejecutable;
+import org.alandoc.pixup.gui.LecturaAccion;
+import org.alandoc.pixup.negocio.Ejecutable;
 
 public class Consola extends LecturaAccion
 {
@@ -25,7 +25,8 @@ public class Consola extends LecturaAccion
     {
         System.out.println("Seleccione una opcion:");
         System.out.println("1.-Catálogos");
-        System.out.println("2.-Salir");
+        System.out.println("2.-Pendiente");
+        System.out.println("3.-Salir");
     }
 
     @Override
@@ -37,7 +38,7 @@ public class Consola extends LecturaAccion
     @Override
     public int valorMaxMenu()
     {
-        return 2;
+        return 3;
     }
 
     @Override
@@ -46,6 +47,10 @@ public class Consola extends LecturaAccion
         Ejecutable ejecutable = null;
         System.out.println("Opcion: " + opcion);
         if(opcion==1)
+        {
+            ejecutable = ListaCatalogos.getInstance( );
+        }
+        if(opcion==2)
         {
             ejecutable = ListaCatalogos.getInstance( );
         }

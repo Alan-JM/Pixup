@@ -1,4 +1,4 @@
-package org.gerdoc.pixup.model;
+package org.alandoc.pixup.model;
 
 public class Estado extends Catalogo
 {
@@ -7,6 +7,7 @@ public class Estado extends Catalogo
     public Estado()
     {
     }
+
 
     public String getNombre()
     {
@@ -17,6 +18,7 @@ public class Estado extends Catalogo
     {
         this.nombre = nombre;
     }
+
 
     @Override
     public String toString()

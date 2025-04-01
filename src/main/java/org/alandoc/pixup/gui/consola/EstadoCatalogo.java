@@ -1,7 +1,7 @@
-package org.gerdoc.pixup.gui.consola;
+package org.alandoc.pixup.gui.consola;
 
-import org.gerdoc.pixup.model.Estado;
-import org.gerdoc.pixup.util.ReadUtil;
+import org.alandoc.pixup.model.Estado;
+import org.alandoc.pixup.util.ReadUtil;
 
 public class EstadoCatalogo extends Catalogos<Estado>
 {

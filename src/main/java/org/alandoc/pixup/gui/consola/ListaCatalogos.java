@@ -1,7 +1,7 @@
-package org.gerdoc.pixup.gui.consola;
+package org.alandoc.pixup.gui.consola;
 
-import org.gerdoc.pixup.gui.LecturaAccion;
-import org.gerdoc.pixup.negocio.Ejecutable;
+import org.alandoc.pixup.gui.LecturaAccion;
+import org.alandoc.pixup.negocio.Ejecutable;
 
 public class ListaCatalogos extends LecturaAccion
 {
@@ -49,10 +49,10 @@ public class ListaCatalogos extends LecturaAccion
                 ejecutable = EstadoCatalogo.getInstance( );
                 break;
             case 2:
-                System.out.println( "No implementado" );
+                ejecutable = MunicipioCatalogo.getInstance( );
                 break;
             case 3:
-                System.out.println( "No implementado" );
+                System.out.println("Saliendo aun no");
                 break;
         }
         ejecutable.setFlag( true );
