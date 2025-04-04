@@ -52,7 +52,7 @@ public class ListaCatalogos extends LecturaAccion
                 ejecutable = MunicipioCatalogo.getInstance( );
                 break;
             case 3:
-                System.out.println("Saliendo aun no");
+               ejecutable = ColoniaCatalogo.getInstance();
                 break;
         }
         ejecutable.setFlag( true );

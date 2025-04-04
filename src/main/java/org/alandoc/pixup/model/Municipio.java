@@ -3,7 +3,7 @@ package org.alandoc.pixup.model;
 public class Municipio extends Catalogo
 {
     private String nombre;
-    private Estado estado;
+    public Estado estado;
 
     public Municipio() {
     }
@@ -26,15 +26,15 @@ public class Municipio extends Catalogo
     }
 
     public void setEstado(Estado estado) {
-        super.id = estado.getId();
+        this.estado = estado;
     }
 
     @Override
     public String toString() {
         return "Municipio{" +
                 "nombre='" + nombre + '\'' +
-                ", id=" + id + '\'' +
-                ", estado=" + estado +
+                ", id=" + id +
+                ", estado=" + (estado != null ? estado.getNombre() : "Sin estado asignado") +
                 '}';
     }
 }

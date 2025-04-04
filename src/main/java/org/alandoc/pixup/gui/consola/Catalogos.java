@@ -99,21 +99,21 @@ public abstract class Catalogos<T extends Catalogo> extends LecturaAccion
     }
 
     @Override
-    public void procesaOpcion()
-    {
-        switch (opcion)
-        {
+    public void procesaOpcion() {
+        switch (opcion) {
             case 1:
-                add( );
+                add();
                 break;
             case 2:
-                edit( );
+                edit();
                 break;
             case 3:
-                remove( );
+                remove();
                 break;
             case 4:
-                print( );
+                if (!isListEmpty()) {
+                    print();
+                }
                 break;
         }
     }

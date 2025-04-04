@@ -2,7 +2,7 @@ package org.alandoc.pixup.model;
 
 public abstract class Catalogo
 {
-    protected Integer id;
+    public Integer id;
 
     public Catalogo()
     {
