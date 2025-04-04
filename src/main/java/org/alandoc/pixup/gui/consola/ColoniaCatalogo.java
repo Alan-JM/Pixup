@@ -4,6 +4,8 @@ import org.alandoc.pixup.model.Colonia;
 import org.alandoc.pixup.model.Municipio;
 import org.alandoc.pixup.util.ReadUtil;
 
+import java.io.File;
+
 public class ColoniaCatalogo extends Catalogos<Colonia> {
     public static ColoniaCatalogo coloniaCatalogo;
 
@@ -87,5 +89,10 @@ public class ColoniaCatalogo extends Catalogos<Colonia> {
         } else {
             list.forEach(System.out::println);
         }
+    }
+
+    @Override
+    public File getFile() {
+        return new File("colonia.list");
     }
 }

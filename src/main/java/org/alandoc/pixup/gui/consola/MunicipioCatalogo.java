@@ -4,6 +4,7 @@ import org.alandoc.pixup.model.Estado;
 import org.alandoc.pixup.model.Municipio;
 import org.alandoc.pixup.util.ReadUtil;
 
+import java.io.File;
 
 
 public class MunicipioCatalogo extends Catalogos<Municipio>{
@@ -81,6 +82,11 @@ public class MunicipioCatalogo extends Catalogos<Municipio>{
         System.out.println("Municipio a editar: " + municipio.getNombre( ) );
         System.out.println("Teclee el valor nuevo del Municipio" );
         municipio.setNombre( ReadUtil.read( ) );
+    }
+
+    @Override
+    public File getFile() {
+        return new File( "municipio.list" );
     }
 
 }
