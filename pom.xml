@@ -4,8 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+<<<<<<< HEAD
     <groupId>org.gerdoc.pixup</groupId>
     <artifactId>pixup</artifactId>
+=======
+    <groupId>org.alandoc</groupId>
+    <artifactId>Pixup</artifactId>
+>>>>>>> 38f62cf1c53d066251db318e676c933662a1d9e0
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -14,6 +19,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+<<<<<<< HEAD
     <dependencies>
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
@@ -22,4 +28,6 @@
             <version>8.0.33</version>
         </dependency>
     </dependencies>
+=======
+>>>>>>> 38f62cf1c53d066251db318e676c933662a1d9e0
 </project>
