@@ -84,9 +84,5 @@ public class MunicipioCatalogo extends Catalogos<Municipio>{
         municipio.setNombre( ReadUtil.read( ) );
     }
 
-    @Override
-    public File getFile() {
-        return new File( "municipio.list" );
-    }
 
 }

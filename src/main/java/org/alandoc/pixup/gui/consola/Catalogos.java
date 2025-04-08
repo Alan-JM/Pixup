@@ -4,7 +4,6 @@ import org.alandoc.pixup.gui.LecturaAccion;
 import org.alandoc.pixup.model.Catalogo;
 import org.alandoc.pixup.util.ReadUtil;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +12,6 @@ public abstract class Catalogos<T extends Catalogo> extends LecturaAccion
     protected List<T>list;
     protected T t;
     protected boolean flag2;
-    protected File file;
 
     public Catalogos()
     {
@@ -117,70 +115,6 @@ public abstract class Catalogos<T extends Catalogo> extends LecturaAccion
             case 4:
                 print( );
                 break;
-            case 5:
-                guardarArchivo( );
-                break;
-            case 6:
-                leerArchivo( );
-                break;
-        }
-    }
-
-    private void leerArchivo()
-    {
-        ObjectInputStream objectInputStream = null;
-        FileInputStream fileInputStream = null;
-        try
-        {
-            file = getFile( );
-            fileInputStream = new FileInputStream( file );
-            objectInputStream = new ObjectInputStream( fileInputStream );
-            list = (List<T>) objectInputStream.readObject( );
-            objectInputStream.close( );
-            fileInputStream.close( );
-            System.out.println( "Archivo leido con exito");
-        }
-        catch (FileNotFoundException e)
-        {
-            throw new RuntimeException(e);
-        }
-        catch (ClassNotFoundException e)
-        {
-            throw new RuntimeException(e);
-        }
-        catch (IOException e)
-        {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public abstract File getFile( );
-
-    private void guardarArchivo()
-    {
-        ObjectOutputStream objectOutputStream = null;
-        FileOutputStream fileOutputStream = null;
-        try
-        {
-            if( isListEmpty() )
-            {
-                System.out.println( "No hay elementos para guardar");
-            }
-            file = getFile( );
-            fileOutputStream = new FileOutputStream( file );
-            objectOutputStream = new ObjectOutputStream( fileOutputStream );
-            objectOutputStream.writeObject( list );
-            objectOutputStream.close( );
-            fileOutputStream.close( );
-            System.out.println( "Archivo guardado con exito");
-        }
-        catch (FileNotFoundException e)
-        {
-            throw new RuntimeException(e);
-        }
-        catch (IOException e)
-        {
-            throw new RuntimeException(e);
         }
     }
 
@@ -193,9 +127,7 @@ public abstract class Catalogos<T extends Catalogo> extends LecturaAccion
         System.out.println("2.-Editar");
         System.out.println("3.-Borrar");
         System.out.println("4.-Imprimir");
-        System.out.println("5.-Guardar en archivo");
-        System.out.println("6.-Leer de archivo");
-        System.out.println("7.-Salir");
+        System.out.println("5.-Salir");
     }
 
     @Override
@@ -207,7 +139,7 @@ public abstract class Catalogos<T extends Catalogo> extends LecturaAccion
     @Override
     public int valorMaxMenu()
     {
-        return 7;
+        return 5;
     }
 
 }

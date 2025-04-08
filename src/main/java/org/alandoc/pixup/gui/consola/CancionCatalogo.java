@@ -83,9 +83,4 @@ public class CancionCatalogo extends Catalogos<Cancion> {
         }
     }
 
-    @Override
-    public File getFile() {
-        return new File("Canciones.list");
-    }
-
 }

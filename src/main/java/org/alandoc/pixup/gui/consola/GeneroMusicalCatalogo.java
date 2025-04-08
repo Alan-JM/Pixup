@@ -52,8 +52,4 @@ public class GeneroMusicalCatalogo extends Catalogos<GeneroMusical> {
         }
     }
 
-    @Override
-    public File getFile() {
-        return new File("GeneroMusical.list");
-    }
 }

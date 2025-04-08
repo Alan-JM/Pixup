@@ -45,9 +45,5 @@ public class EstadoCatalogo extends Catalogos<Estado>
         estado.setNombre( ReadUtil.read( ) );
     }
 
-    @Override
-    public File getFile() {
-        return new File("estado.list");
-    }
 
 }

@@ -91,8 +91,4 @@ public class ColoniaCatalogo extends Catalogos<Colonia> {
         }
     }
 
-    @Override
-    public File getFile() {
-        return new File("colonia.list");
-    }
 }

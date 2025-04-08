@@ -8,7 +8,6 @@ public class Estado extends Catalogo
     {
     }
 
-
     public String getNombre()
     {
         return nombre;
@@ -18,7 +17,6 @@ public class Estado extends Catalogo
     {
         this.nombre = nombre;
     }
-
 
     @Override
     public String toString()

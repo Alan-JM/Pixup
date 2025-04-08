@@ -41,8 +41,4 @@ public class ArtistaCatalogos extends Catalogos<Artista>{
         artista.setArtista(ReadUtil.read());
     }
 
-    @Override
-    public File getFile() {
-        return new File("Artista.list");
-    }
 }

@@ -92,8 +92,5 @@ public class DiscoCatalogo extends Catalogos<Disco> {
         }
     }
 
-    @Override
-    public File getFile() {
-        return new File("Disco.list");
-    }
+
 }
