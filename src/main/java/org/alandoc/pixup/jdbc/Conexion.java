@@ -1,106 +1,34 @@
 package org.alandoc.pixup.jdbc;
 
-import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-
-public abstract class Conexion<T>
-{
-    /**
-     * @author gerdoc
-     */
-
-    public static String user = "root";
-    public static String password = "n0m3l0";
-    public static String db = "pixup";
-    public static String server = "127.0.0.1";
+public class Conexion<T> {
     protected Connection connection;
 
-    public Conexion()
-    {
-    }
+    // Configuración de conexión a la base de datos
+    private static final String URL = "jdbc:mysql://localhost:3306/pixup";
+    private static final String USER = "root"; // Reemplaza con tu usuario
+    private static final String PASSWORD = "n0m3l0"; // Reemplaza con tu contraseña
 
-    public boolean testDriver()
-    {
-        try
-        {
-            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-            return true;
-        }
-        catch (Exception ex)
-        {
-            ex.printStackTrace();
-        }
-        return false;
-    }
-
-    private boolean loadConnection(String user, String password, String db, String server)
-    {
-        String url = null;
-        if (user == null || password == null || db == null || server == null)
-        {
-            return false;
-        }
-        if ("".equals(user) || "".equals(password) || "".equals(db) || "".equals(server))
-        {
-            return false;
-        }
-        url = String.format("jdbc:mysql://%s/%s?user=%s&password=%s", server, db, user, password);
-        try
-        {
-            if (!testDriver( ) )
-            {
-                return false;
-            }
-            connection = DriverManager.getConnection(url);
-            return connection != null;
-        }
-        catch (SQLException ex)
-        {
-            ex.printStackTrace();
-        }
-        return false;
-    }
-
-    public boolean openConnection()
-    {
-        try
-        {
-            if( connection == null )
-            {
-                if( !loadConnection( user, password, db, server ) )
-                {
-                    return false;
-                }
-            }
-            return connection.isClosed();
-        }
-        catch (SQLException e)
-        {
+    public boolean openConnection() {
+        try {
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            return true; // Conexión exitosa
+        } catch (SQLException e) {
+            System.out.println("Error al conectar a la base de datos: " + e.getMessage());
             return false;
         }
     }
 
-    public void closeConnection( )
-    {
-        try
-        {
-            if (connection == null)
-            {
-                return;
+    public void closeConnection() {
+        try {
+            if (connection != null) {
+                connection.close();
             }
-            if (connection.isClosed())
-            {
-                return;
-            }
-            connection.close();
-        }
-        catch (SQLException ex)
-        {
-            ex.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println("Error al cerrar la conexión: " + e.getMessage());
         }
     }
-
 }

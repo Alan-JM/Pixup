@@ -49,7 +49,7 @@ public class ColoniaCatalogo extends Catalogos<Colonia> {
 
         // Buscar el municipio con el ID ingresado
         Municipio municipioSeleccionado = MunicipioCatalogo.getInstance().list.stream()
-                .filter(m -> m.getId().equals(idMunicipio))
+                .filter(m -> m.getId() == idMunicipio) // Corrección aquí
                 .findFirst()
                 .orElse(null);
 
@@ -90,5 +90,4 @@ public class ColoniaCatalogo extends Catalogos<Colonia> {
             list.forEach(System.out::println);
         }
     }
-
 }

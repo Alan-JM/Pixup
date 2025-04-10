@@ -40,8 +40,9 @@ public class CancionCatalogo extends Catalogos<Cancion> {
         System.out.println("\nIngrese el ID del disco al que pertenece esta canción:");
         int idDisco = ReadUtil.readInt();
 
+        // Corrección en comparación de ID
         Disco discoSeleccionado = DiscoCatalogo.getInstance().list.stream()
-                .filter(d -> d.getId().equals(idDisco))
+                .filter(d -> d.getId() == idDisco) // <-- Cambio de .equals() a ==
                 .findFirst()
                 .orElse(null);
 
@@ -70,7 +71,6 @@ public class CancionCatalogo extends Catalogos<Cancion> {
         cancion.setDuracion(ReadUtil.read());
     }
 
-
     @Override
     public void print() {
         System.out.println("Ejecutando impresión única...");
@@ -82,5 +82,4 @@ public class CancionCatalogo extends Catalogos<Cancion> {
             list.forEach(System.out::println);
         }
     }
-
 }

@@ -50,7 +50,7 @@ public class MunicipioCatalogo extends Catalogos<Municipio>{
 
         // Buscar el estado con el ID ingresado
         Estado estadoSeleccionado = EstadoCatalogo.getInstance().list.stream()
-                .filter(e -> e.getId().equals(idEstado))
+                .filter(e -> e.getId() == idEstado) // Cambié .equals() por ==
                 .findFirst()
                 .orElse(null);
 

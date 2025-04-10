@@ -53,7 +53,7 @@ public class DiscoCatalogo extends Catalogos<Disco> {
         System.out.println("\nIngrese el ID de la disquera:");
         int idDisquera = ReadUtil.readInt();
         Disquera disqueraSeleccionada = DisqueraCatalogo.getInstance().list.stream()
-                .filter(d -> d.getId().equals(idDisquera))
+                .filter(d -> d.getId() == idDisquera) // Corrección aquí
                 .findFirst()
                 .orElse(null);
 
@@ -91,6 +91,4 @@ public class DiscoCatalogo extends Catalogos<Disco> {
             list.forEach(System.out::println);
         }
     }
-
-
 }

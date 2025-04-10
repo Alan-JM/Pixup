@@ -8,7 +8,7 @@ public abstract class Catalogo
     {
     }
 
-    public Integer getId()
+    public int getId()
     {
         return id;
     }
