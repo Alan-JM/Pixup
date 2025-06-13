@@ -17,7 +17,8 @@
 		<mapping class="org.alandoc.pixup.model.Artista"/>
 		<mapping class="org.alandoc.pixup.model.Disquera"/>
 		<mapping class="org.alandoc.pixup.model.GeneroMusical"/>
-
+		<mapping class="org.alandoc.pixup.model.Disco"/>
+		<mapping class="org.alandoc.pixup.model.Cancion"/>
 
 
 

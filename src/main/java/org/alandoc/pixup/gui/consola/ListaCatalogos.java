@@ -70,10 +70,10 @@ public class ListaCatalogos extends LecturaAccion
                         ejecutable = GeneroMusicalCatalogo.getInstance( );
                         break;
                         case 7:
-                            System.out.println( "No implementado" );
+                            ejecutable = DiscoCatalogo.getInstance( );
                             break;
             case 8:
-                System.out.println( "No implementado" );
+                ejecutable = CancionCatalogo.getInstance( );
                 break;
         }
         ejecutable.setFlag( true );

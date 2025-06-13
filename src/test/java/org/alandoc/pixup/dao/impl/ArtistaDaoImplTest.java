@@ -23,14 +23,14 @@ class ArtistaDaoImplTest {
     void save() {
         ArtistaDao artistaDao = ArtistaDaoImpl.getInstance();
         Artista artista = new Artista();
-        artista.setNombre("Michaek Jackson");
+        artista.setNombre("Silvio");
 
         boolean res = artistaDao.save(artista);
         assertTrue(res, "La inserción del artista ha fallado");
 
         Artista artistaGuardado = artistaDao.findById(artista.getId());
         assertNotNull(artistaGuardado, "El Artista no fue guardado correctamente");
-        assertEquals("Michaek Jackson", artistaGuardado.getNombre());
+        assertEquals("Silvio", artistaGuardado.getNombre());
     }
 
     @Test
