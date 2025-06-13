@@ -26,9 +26,9 @@ class CancioDaoImplTest {
     void save() {
         CancionDao cancionDao = CancioDaoImpl.getInstance();
         Cancion cancion = new Cancion();
-        cancion.setTitulo("El cielo a mi favor");
-        cancion.setDuracion(java.sql.Time.valueOf("00:05:32"));
-        Disco disco = DiscoDaoImpl.getInstance().findById(2);
+        cancion.setTitulo("El problema");
+        cancion.setDuracion(java.sql.Time.valueOf("00:05:31"));
+        Disco disco = DiscoDaoImpl.getInstance().findById(3);
         if (disco != null) {
             cancion.setDisco(disco);
         } else {
@@ -40,17 +40,17 @@ class CancioDaoImplTest {
 
         Cancion cancionGuardado = cancionDao.findById(cancion.getId());
         assertNotNull(cancionGuardado, "La cancion no fue guardado correctamente");
-        assertEquals("El cielo a mi favor", cancionGuardado.getTitulo());
+        assertEquals("El problema", cancionGuardado.getTitulo());
 
     }
 
     @Test
     void update() {
         CancionDao cancionDao = CancioDaoImpl.getInstance();
-        Cancion cancion = cancionDao.findById(1);
+        Cancion cancion = cancionDao.findById(5);
         assertNotNull(cancion, "La cancion con ID 1 no existe");
 
-        cancion.setTitulo("Apnea");
+        cancion.setTitulo("Minutos");
         cancion.setDuracion(java.sql.Time.valueOf("00:03:02"));
         Disco disco = DiscoDaoImpl.getInstance().findById(2);
         if (disco != null) {
@@ -62,31 +62,31 @@ class CancioDaoImplTest {
         boolean res = cancionDao.update(cancion);
         assertTrue(res, "La actualización de la cancion ha fallado");
 
-        Cancion cancionActualizado = cancionDao.findById(1);
-        assertEquals("Apnea", cancionActualizado.getTitulo(), "La cancion no se actualizó correctamente");
+        Cancion cancionActualizado = cancionDao.findById(5);
+        assertEquals("Minutos", cancionActualizado.getTitulo(), "La cancion no se actualizó correctamente");
     }
 
     @Test
     void delete() {
         CancionDao cancionDao = CancioDaoImpl.getInstance();
-        Cancion cancion = cancionDao.findById(1);
+        Cancion cancion = cancionDao.findById(5);
         assertNotNull(cancion, "El Artista con ID 1 no existe");
 
         boolean res = cancionDao.delete(cancion);
         assertTrue(res, "La eliminación de la cancion ha fallado");
 
-        Cancion cancionEliminado = cancionDao.findById(1);
+        Cancion cancionEliminado = cancionDao.findById(5);
         assertNull(cancionEliminado, "La cancion aún existe después de la eliminación");
     }
 
     @Test
     void findById() {
         CancionDao cancionDao = CancioDaoImpl.getInstance();
-        Cancion cancion = cancionDao.findById(1);
+        Cancion cancion = cancionDao.findById(5);
 
         assertNotNull(cancion, "La cancion con ID 1 no existe");
-        assertEquals(1, cancion.getId(), "El ID del cancion no coincide");
-        assertEquals("Apnea", cancion.getTitulo(), "El nombre de la cancion no coincide");
+        assertEquals(5, cancion.getId(), "El ID del cancion no coincide");
+        assertEquals("Minutos", cancion.getTitulo(), "El nombre de la cancion no coincide");
     }
 
 }

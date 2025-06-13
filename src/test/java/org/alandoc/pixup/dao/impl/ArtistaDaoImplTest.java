@@ -23,51 +23,51 @@ class ArtistaDaoImplTest {
     void save() {
         ArtistaDao artistaDao = ArtistaDaoImpl.getInstance();
         Artista artista = new Artista();
-        artista.setNombre("Silvio");
+        artista.setNombre("Garmendia");
 
         boolean res = artistaDao.save(artista);
         assertTrue(res, "La inserción del artista ha fallado");
 
         Artista artistaGuardado = artistaDao.findById(artista.getId());
         assertNotNull(artistaGuardado, "El Artista no fue guardado correctamente");
-        assertEquals("Silvio", artistaGuardado.getNombre());
+        assertEquals("Garmendia", artistaGuardado.getNombre());
     }
 
     @Test
     void update() {
         ArtistaDao artistaDao = ArtistaDaoImpl.getInstance();
-        Artista artista = artistaDao.findById(1);
+        Artista artista = artistaDao.findById(9);
         assertNotNull(artista, "El Artista con ID 1 no existe");
 
         artista.setNombre("Bruno Mars");
         boolean res = artistaDao.update(artista);
         assertTrue(res, "La actualización del Artista ha fallado");
 
-        Artista artistaActualizado = artistaDao.findById(1);
+        Artista artistaActualizado = artistaDao.findById(9);
         assertEquals("Bruno Mars", artistaActualizado.getNombre(), "El nombre del Artista no se actualizó correctamente");
     }
 
     @Test
     void delete() {
         ArtistaDao artistaDao = ArtistaDaoImpl.getInstance();
-        Artista artista = artistaDao.findById(1);
+        Artista artista = artistaDao.findById(9);
         assertNotNull(artista, "El Artista con ID 1 no existe");
 
         boolean res = artistaDao.delete(artista);
         assertTrue(res, "La eliminación del Artista ha fallado");
 
-        Artista artistaEliminado = artistaDao.findById(1);
+        Artista artistaEliminado = artistaDao.findById(9);
         assertNull(artistaEliminado, "El Artista aún existe después de la eliminación");
     }
 
     @Test
     void findById() {
         ArtistaDao artistaDao = ArtistaDaoImpl.getInstance();
-        Artista artista = artistaDao.findById(2);
+        Artista artista = artistaDao.findById(7);
 
         assertNotNull(artista, "El Artista con ID 1 no existe");
-        assertEquals(2, artista.getId(), "El ID del Artista no coincide");
-        assertEquals("Michaek Jackson", artista.getNombre(), "El nombre del artista no coincide");
+        assertEquals(7, artista.getId(), "El ID del Artista no coincide");
+        assertEquals("Alejandro", artista.getNombre(), "El nombre del artista no coincide");
     }
 
 }

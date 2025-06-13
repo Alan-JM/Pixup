@@ -25,50 +25,50 @@ class GeneroMusicalDaoImplTest {
     void save() {
         GeneroMusicalDao generoMusicalDao = GeneroMusicalDaoImpl.getInstance();
         GeneroMusical generoMusical = new GeneroMusical();
-        generoMusical.setNombre("Pop");
+        generoMusical.setNombre("city pop");
 
         boolean res = generoMusicalDao.save(generoMusical);
         assertTrue(res, "La inserción del genero musical ha fallado");
 
         GeneroMusical generoMusicalGuardado = generoMusicalDao.findById(generoMusical.getId());
         assertNotNull(generoMusicalGuardado, "El genero musical no fue guardado correctamente");
-        assertEquals("Pop", generoMusicalGuardado.getNombre());
+        assertEquals("city pop", generoMusicalGuardado.getNombre());
     }
 
     @Test
     void update() {
         GeneroMusicalDao generoMusicalDao = GeneroMusicalDaoImpl.getInstance();
-        GeneroMusical generoMusical = generoMusicalDao.findById(1);
+        GeneroMusical generoMusical = generoMusicalDao.findById(6);
         assertNotNull(generoMusical, "El genero musical con ID 1 no existe");
 
         generoMusical.setNombre("rock");
         boolean res = generoMusicalDao.update(generoMusical);
         assertTrue(res, "La actualización del genero musical ha fallado");
 
-        GeneroMusical generoMusicalActualizado = generoMusicalDao.findById(1);
+        GeneroMusical generoMusicalActualizado = generoMusicalDao.findById(6);
         assertEquals("rock", generoMusicalActualizado.getNombre(), "El nombre del genero musical no se actualizó correctamente");
     }
 
     @Test
     void delete() {
         GeneroMusicalDao generoMusicalDao = GeneroMusicalDaoImpl.getInstance();
-        GeneroMusical generoMusical = generoMusicalDao.findById(1);
+        GeneroMusical generoMusical = generoMusicalDao.findById(6);
         assertNotNull(generoMusical, "El genero musical con ID 1 no existe");
 
         boolean res = generoMusicalDao.delete(generoMusical);
         assertTrue(res, "La eliminación del genero musical ha fallado");
 
-        GeneroMusical generoMusicalEliminado = generoMusicalDao.findById(1);
+        GeneroMusical generoMusicalEliminado = generoMusicalDao.findById(6);
         assertNull(generoMusicalEliminado, "El genero musical aún existe después de la eliminación");
     }
 
     @Test
     void findById() {
         GeneroMusicalDao generoMusicalDao = GeneroMusicalDaoImpl.getInstance();
-        GeneroMusical generoMusical = generoMusicalDao.findById(1);
+        GeneroMusical generoMusical = generoMusicalDao.findById(6);
 
         assertNotNull(generoMusical, "La genero musical con ID 1 no existe");
-        assertEquals(1, generoMusical.getId(), "El ID del genero musical no coincide");
+        assertEquals(6, generoMusical.getId(), "El ID del genero musical no coincide");
         assertEquals("rock", generoMusical.getNombre(), "El nombre del genero musical no coincide");
     }
 

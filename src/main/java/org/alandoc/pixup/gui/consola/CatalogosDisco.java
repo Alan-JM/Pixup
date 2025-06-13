@@ -78,12 +78,7 @@ public abstract class CatalogosDisco<T extends Catalogo> extends LecturaAccion {
         List<Artista> artistas = ArtistaDaoImpl.getInstance().findAll();
         List<Disquera> disqueras = DisqueraDaoImpl.getInstance().findAll();
         List<GeneroMusical> generos = GeneroMusicalDaoImpl.getInstance().findAll();
-        boolean res = discoDao.save(disco); //  Guarda en BD
-        if (res) {
-            System.out.println(" Disco guardado correctamente.");
-        } else {
-            System.out.println(" Error al guardar el titulo del disco.");
-        }
+
 
 // Mostrar artistas
         System.out.println("Seleccione el artista:");
@@ -108,6 +103,14 @@ public abstract class CatalogosDisco<T extends Catalogo> extends LecturaAccion {
         }
         int opcionGenero = ReadUtil.readInt();
         disco.setGeneroMusical(generos.get(opcionGenero - 1));
+
+
+        boolean res = discoDao.save(disco); //  Guarda en BD
+        if (res) {
+            System.out.println(" Disco guardado correctamente.");
+        } else {
+            System.out.println(" Error al guardar el titulo del disco.");
+        }
     }
     public void edit() {
         DiscoDao discoDao = DiscoDaoImpl.getInstance();
