@@ -1,3 +1,4 @@
+
 package org.alandoc.pixup.util;
 
 import java.util.Scanner;
@@ -70,7 +71,6 @@ public class ReadUtil
         }
         return null;
     }
-<<<<<<< HEAD
 
     public static Float readFloat() {
         String valor = null;
@@ -119,7 +119,7 @@ public class ReadUtil
         boolean flag = true;
 
         while (flag) {
-            input = read(); // reutiliza tu método read()
+            input = read(); // reutiliza tu metodo read()
             if (input != null && !input.isEmpty()) {
                 try {
                     time = java.sql.Time.valueOf(input);
@@ -132,6 +132,4 @@ public class ReadUtil
         }
         return null;
     }
-=======
->>>>>>> cbb4b166cfd9062e113830306bf1d30d1dfb7707
 }

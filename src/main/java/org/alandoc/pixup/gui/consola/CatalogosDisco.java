@@ -1,3 +1,4 @@
+
 package org.alandoc.pixup.gui.consola;
 
 import org.alandoc.pixup.dao.ArtistaDao;

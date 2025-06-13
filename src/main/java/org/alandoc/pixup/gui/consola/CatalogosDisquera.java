@@ -1,3 +1,4 @@
+
 package org.alandoc.pixup.gui.consola;
 
 import org.alandoc.pixup.dao.DisqueraDao;
@@ -23,14 +24,14 @@ public abstract class CatalogosDisquera<T extends Catalogo> extends LecturaAccio
     public boolean isListEmpty() {
         return list.isEmpty();
     }
-    
-    
+
+
     public abstract Disquera newT();
 
     public abstract boolean processNewT(Disquera disquera);
 
     public abstract void processEditT(Disquera disquera);
-    
+
     public void print() {
         DisqueraDao disqueraDao = DisqueraDaoImpl.getInstance(); //  Conexión con BD
         List<Disquera> disqueras = disqueraDao.findAll(); //  Recuperando datos desde MySQL
@@ -43,7 +44,7 @@ public abstract class CatalogosDisquera<T extends Catalogo> extends LecturaAccio
         }
     }
 
- 
+
 
     public void add() {
         DisqueraDao disqueraDao = DisqueraDaoImpl.getInstance();
@@ -198,5 +199,5 @@ public abstract class CatalogosDisquera<T extends Catalogo> extends LecturaAccio
         return 5;
     }
 
-  
+
 }

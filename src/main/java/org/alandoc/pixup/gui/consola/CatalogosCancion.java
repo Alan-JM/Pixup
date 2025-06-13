@@ -1,3 +1,4 @@
+
 package org.alandoc.pixup.gui.consola;
 
 import org.alandoc.pixup.dao.CancionDao;
@@ -53,7 +54,7 @@ public abstract class CatalogosCancion<T extends Catalogo> extends LecturaAccion
 
     public void add() {
         CancionDao cancionDao = CancioDaoImpl.getInstance();
-            Cancion cancion = new Cancion();
+        Cancion cancion = new Cancion();
         System.out.println("Ingrese el nombre de la nueva canción:");
         cancion.setTitulo(ReadUtil.read());
         System.out.println("Ingrese la duración (HH:mm:ss):");

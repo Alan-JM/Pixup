@@ -1,12 +1,8 @@
+
 package org.alandoc.pixup.gui.consola;
 
 import org.alandoc.pixup.model.Estado;
 import org.alandoc.pixup.util.ReadUtil;
-<<<<<<< HEAD
-=======
-
-import java.io.File;
->>>>>>> cbb4b166cfd9062e113830306bf1d30d1dfb7707
 
 public class EstadoCatalogo extends Catalogos<Estado>
 {
@@ -47,6 +43,5 @@ public class EstadoCatalogo extends Catalogos<Estado>
         System.out.println("Teclee el valor nuevo del estado" );
         estado.setNombre( ReadUtil.read( ) );
     }
-
 
 }
