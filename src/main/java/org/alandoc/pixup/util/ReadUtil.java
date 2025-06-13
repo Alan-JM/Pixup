@@ -70,6 +70,7 @@ public class ReadUtil
         }
         return null;
     }
+<<<<<<< HEAD
 
     public static Float readFloat() {
         String valor = null;
@@ -131,4 +132,6 @@ public class ReadUtil
         }
         return null;
     }
+=======
+>>>>>>> cbb4b166cfd9062e113830306bf1d30d1dfb7707
 }
